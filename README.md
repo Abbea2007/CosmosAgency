@@ -16,4 +16,4 @@ José Nahúm Espinoza
 
 
 📄 Diagrama de clase (UML)
-<img width="3183" height="1869" alt="Clase UML" src="https://github.com/user-attachments/assets/f7cbacee-799f-46b9-882a-cabea994e479" />
+<img width="3203" height="2028" alt="Clase UML (1)" src="https://github.com/user-attachments/assets/2a93d9e1-2964-4f9c-a291-e028cbd89b04" />
