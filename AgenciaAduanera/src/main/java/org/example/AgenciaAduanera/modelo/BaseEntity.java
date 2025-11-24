@@ -5,10 +5,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.Hidden;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 @MappedSuperclass
 @Getter
@@ -17,9 +14,7 @@ import javax.persistence.MappedSuperclass;
 public class BaseEntity {
 
     @Id
-    @GeneratedValue (generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
-    @Column(length = 36)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Hidden
     private Long id;
 
