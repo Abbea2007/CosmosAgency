@@ -13,3 +13,6 @@ José Gabriel Cano
 Dennis Amaru
 
 José Nahúm Espinoza
+
+
+<img width="3183" height="1869" alt="Clase UML" src="https://github.com/user-attachments/assets/f7cbacee-799f-46b9-882a-cabea994e479" />
