@@ -1,7 +1,10 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.Seguridad;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.BaseEntity;
+import org.example.AgenciaAduanera.modelo.Estado;
+import org.example.AgenciaAduanera.modelo.Sucursal;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.View;
@@ -19,19 +22,22 @@ import javax.persistence.*;
                         "nombre;" +
                         "email;" +
                         "estado;" +
-                        "sucursal;"),
+                        "sucursal;" +
+        "cargo;"),
         @View(name = "init", members =
                 "username;" +
                         "nombre;" +
                         "email;" +
                         "estado;" +
-                        "sucursal;"),
+                        "sucursal;" +
+        "cargo;"),
         @View(members =
                 "username;" +
                         "nombre;" +
                         "email;" +
                         "estado;" +
-                        "sucursal;")
+                        "sucursal;" +
+        "cargo;")
 })
 public class Usuario extends BaseEntity {
 
@@ -47,6 +53,11 @@ public class Usuario extends BaseEntity {
     @JoinColumn(name = "sucursal_id")
     @DescriptionsList(descriptionProperties = "nombre")
     private Sucursal sucursal;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cargo_id")
+    @DescriptionsList(descriptionProperties = "nombreCargo")
+    private Cargo cargo;
 
     @Required
     @Enumerated(EnumType.STRING)

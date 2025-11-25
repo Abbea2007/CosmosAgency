@@ -1,8 +1,9 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.Catalogos;
 
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.openxava.annotations.DescriptionsList;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Table(name = "municipio")
 @Getter
 @Setter
-public class Municipio extends BaseEntity{
+public class Municipio extends BaseEntity {
 
     private String nombreMunicipio;
 

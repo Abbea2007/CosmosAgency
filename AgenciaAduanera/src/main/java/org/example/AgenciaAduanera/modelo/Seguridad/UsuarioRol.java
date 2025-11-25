@@ -1,12 +1,14 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.Seguridad;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.View;
 import org.openxava.annotations.Views;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "usuariorol",
@@ -16,15 +18,19 @@ import javax.persistence.*;
 @Views({
         @View(name = "Simple", members =
                 "usuario;" +
-                        "rol;"),
+                        "rol;" +
+        "asignacionFecha;"),
         @View(name = "init", members =
                 "usuario;" +
-                        "rol;"),
+                        "rol;" +
+        "asignacionFecha;"),
         @View(members =
                 "usuario;" +
-                        "rol;")
+                        "rol;" +
+        "asignacionFecha;")
 })
 public class UsuarioRol extends BaseEntity {
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usuario_id")
@@ -35,5 +41,8 @@ public class UsuarioRol extends BaseEntity {
     @JoinColumn(name = "rol_id")
     @DescriptionsList(descriptionProperties="nombre")
     private Rol rol;
+
+    private LocalDate asignacionFecha;
+
 }
 

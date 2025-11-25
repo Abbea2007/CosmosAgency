@@ -2,6 +2,7 @@ package org.example.AgenciaAduanera.modelo;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.Catalogos.Municipio;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.View;

@@ -1,7 +1,8 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.Seguridad;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.View;
 import org.openxava.annotations.Views;
