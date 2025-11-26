@@ -35,7 +35,7 @@ public class Expediente extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "estado_expediente_id")
-    @DescriptionsList(descriptionProperties="nombreEstadoExpediente")
+    @DescriptionsList(descriptionProperties="nombreEstado")
     private EstadoExpediente estadoExpediente;
 
 }
