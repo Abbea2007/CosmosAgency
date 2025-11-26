@@ -1,6 +1,6 @@
 ## 📦 Sistema de Gestión Aduanera – Agencia Aduanera Cosmos S.A.
 
-Optimización operativa mediante una base de datos relacional centralizada
+Solución empresarial desarrollada en **Java** + **OpenXava** + **PostgreSQL** para modernizar y controlar la operación aduanera.
 
 ---
 
@@ -86,12 +86,12 @@ La agencia se encuentra ubicada de TransNica, cuadra y media al norte, módulo N
 
 ## 📌 Autores del Proyecto
 
-Carlos Alfredo Abea Martínez
+**Carlos Alfredo Abea Martínez**
 
-José Gabriel Cano Blandón
+**José Gabriel Cano Blandón**
 
-José Nahúm Espinoza
+**José Nahúm Espinoza**
 
-Dennis Amaru Cruz Abrego
+**Dennis Amaru Cruz Abrego**
 
 
