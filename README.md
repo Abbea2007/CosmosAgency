@@ -60,7 +60,8 @@ Este sistema servirá como pilar para:
 
 ## 📂 Diagrama UML
 
-<img width="5160" height="3098" alt="Copia de Clase UML (1)" src="https://github.com/user-attachments/assets/b61f6b88-16e2-4da7-80b6-a883b8101fdf" />
+<img width="5160" height="3098" alt="Copia de Clase UML (2)" src="https://github.com/user-attachments/assets/1fec8c05-b3db-4425-afab-4d16dcc0f10f" />
+
 
 ---
 
