@@ -87,8 +87,11 @@ La agencia se encuentra ubicada de TransNica, cuadra y media al norte, módulo N
 ## 📌 Autores del Proyecto
 
 Carlos Alfredo Abea Martínez
+
 José Gabriel Cano Blandón
+
 José Nahúm Espinoza
+
 Dennis Amaru Cruz Abrego
 
 
