@@ -2,6 +2,7 @@ package org.example.AgenciaAduanera.modelo;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.Catalogos.Direccion;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.View;
 import org.openxava.annotations.Views;
@@ -16,25 +17,31 @@ import javax.persistence.*;
         @View(name = "Simple", members =
                 "codigo;" +
                         "nombre;" +
-                        "direccion;" +
-                        "telefono;"),
+                        "telefono;" +
+        "direccion;"),
         @View(name = "init", members =
                 "codigo;" +
                         "nombre;" +
-                        "direccion;" +
-                        "telefono;"),
+                        "telefono;" +
+        "direccion;"),
         @View(members =
                 "codigo;" +
                         "nombre;" +
-                        "direccion;" +
-                        "telefono;")
+                        "telefono;" +
+        "direccion;"),
 })
 public class Sucursal extends BaseEntity {
 
     @Required
     private String codigo;
 
+    @Required
     private String nombre;
-    private String direccion;
+
+
+    @Required
     private String telefono;
+
+    @Embedded
+    private Direccion direccion;
 }

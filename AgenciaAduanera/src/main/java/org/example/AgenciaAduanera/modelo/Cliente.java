@@ -2,6 +2,7 @@ package org.example.AgenciaAduanera.modelo;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.Catalogos.Direccion;
 import org.example.AgenciaAduanera.modelo.Catalogos.Municipio;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.Required;
@@ -20,25 +21,21 @@ import javax.persistence.*;
                         "ruc;" +
                         "email;" +
                         "telefono;" +
-                        "direccion;" +
-                        "municipio;" +
-                        "estado;"),
+        "direccion;"),
         @View(name = "init", members =
                 "nombreCliente;" +
                         "ruc;" +
                         "email;" +
                         "telefono;" +
-                        "direccion;" +
-                        "municipio;" +
-                        "estado;"),
+        "direccion;"),
+
         @View(members =
                 "nombreCliente;" +
                         "ruc;" +
                         "email;" +
                         "telefono;" +
-                        "direccion;" +
-                        "municipio;" +
-                        "estado;")
+        "direccion;"),
+
 })
 public class Cliente extends BaseEntity {
 
@@ -55,15 +52,11 @@ public class Cliente extends BaseEntity {
     @Required
     private String telefono;
 
-    @Required
-    private String direccion;
+    @Embedded
+    private Direccion direccion;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "municipio_id")
-    @DescriptionsList(descriptionProperties = "nombreMunicipio")
-    private Municipio municipio;
 
-    @Required
-    @Enumerated(EnumType.STRING)
-    private Estado estado;
+
+
+
 }

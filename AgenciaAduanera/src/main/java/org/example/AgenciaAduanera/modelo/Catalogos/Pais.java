@@ -25,7 +25,5 @@ public class Pais extends BaseEntity {
     private String nombrepais;
 
 
-    @OneToMany(mappedBy = "pais", cascade = CascadeType.ALL)
-    @ListProperties("id, nombremunicipio")
-    private List<Municipio> municipios;
+
 }
