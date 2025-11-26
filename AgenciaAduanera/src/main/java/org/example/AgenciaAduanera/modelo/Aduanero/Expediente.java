@@ -27,9 +27,7 @@ public class Expediente extends BaseEntity {
     private LocalDate fecha_apertura;
 
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cliente_id")
-    @DescriptionsList(descriptionProperties="nombreCliente")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Cliente cliente;
 
 
