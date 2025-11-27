@@ -16,18 +16,21 @@ import javax.persistence.*;
 @Views({
         @View(name = "Simple", members =
                 "username;" +
+                        "password;" +
                         "nombre;" +
                         "email;" +
                         "sucursal;" +
         "cargo;"),
         @View(name = "init", members =
                 "username;" +
+                        "password;" +
                         "nombre;" +
                         "email;" +
                         "sucursal;" +
         "cargo;"),
         @View(members =
                 "username;" +
+                        "password;" +
                         "nombre;" +
                         "email;" +
                         "sucursal;" +
@@ -37,6 +40,7 @@ public class Usuario extends BaseEntity {
 
     @Required
     private String username;
+    private String password;
 
     @Required
     private String nombre;

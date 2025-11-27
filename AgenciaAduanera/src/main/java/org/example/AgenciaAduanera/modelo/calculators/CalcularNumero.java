@@ -12,12 +12,12 @@ public class CalcularNumero implements ICalculator {
 
     @Getter
     @Setter
-    private int anyo;
+    private int anio;
 
     public Object calculate() throws Exception {
         Query query = XPersistence.getManager()
-                .createQuery("SELECT MAX(f.numero) FROM Factura f  WHERE f.anyo = :anyo");
-        query.setParameter("anyo", anyo);
+                .createQuery("SELECT MAX(f.numero) FROM Factura f  WHERE f.anio = :anyo");
+        query.setParameter("anyo", anio);
         Integer ultimoNumero = (Integer) query.getSingleResult();
         return ultimoNumero == null ? 1 : ultimoNumero + 1;
     }

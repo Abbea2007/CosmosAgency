@@ -17,13 +17,20 @@ import java.util.Collection;
 @Entity
 @Getter
 @Setter
+@View(members =
+        "anio, numero, fecha; " +
+                "cliente; " +
+                "detalleFacturas; " +
+                "subTotal, iva, total; " +
+                "obervaciones"
+)
 
 public class Factura extends BaseEntity{
 
 
     @DefaultValueCalculator(CurrentYearCalculator.class)
-    private int anyo;
-    @DefaultValueCalculator(value = CalcularNumero.class, properties = @PropertyValue(name = "anyo"))
+    private int anio;
+    @DefaultValueCalculator(value = CalcularNumero.class, properties = @PropertyValue(name = "anio"))
     private int numero;
     @DefaultValueCalculator(CurrentYearCalculator.class)
     private LocalDate fecha;
@@ -41,7 +48,5 @@ public class Factura extends BaseEntity{
     private BigDecimal total;
     @TextArea
     private String obervaciones;
-
-
 
 }
