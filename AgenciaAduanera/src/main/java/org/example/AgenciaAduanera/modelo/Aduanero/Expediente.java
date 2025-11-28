@@ -13,6 +13,7 @@ import org.openxava.calculators.CurrentYearCalculator;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Collection;
 
 
 @Entity
@@ -40,9 +41,12 @@ public class Expediente extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Cliente cliente;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "estado_expediente_id")
-    @DescriptionsList(descriptionProperties="nombreEstado")
     private EstadoExpediente estadoExpediente;
+
+    @OneToMany(mappedBy = "expediente", fetch = FetchType.LAZY)
+    private Collection<Declaracion> declaraciones;
+
 
 }

@@ -1,18 +1,24 @@
 package org.example.AgenciaAduanera.modelo.Aduanero;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.EstadoDeclaracion;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
-import org.openxava.annotations.DefaultValueCalculator;
-import org.openxava.annotations.DescriptionsList;
-import org.openxava.annotations.PropertyValue;
-import org.openxava.annotations.Required;
+import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Collection;
+
+
+@Entity
+@Getter
+@Setter
+@View(members =
+        "numeroDeclaracion, fechaDeclaracion, tipoDeclaracion;" +
+        "expediente;")
 
 public class Declaracion extends BaseEntity {
 
@@ -25,7 +31,11 @@ public class Declaracion extends BaseEntity {
     private String tipoDeclaracion;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name= "expediente_id")
     private Expediente expediente;
 
+    @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)
+    @ListProperties("descripcion, cantidad, pesoUnitario, UnidadMedida.abreviatura, valor, Pais.nombrepais, CodigoArancelario.codigo ")
+    private Collection<ItemDeclaracion> items;
 
 }
