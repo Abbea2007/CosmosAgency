@@ -18,7 +18,8 @@ import java.util.Collection;
 @Setter
 @View(members =
         "numeroDeclaracion, fechaDeclaracion, tipoDeclaracion;" +
-        "expediente;")
+        "expediente;" +
+"items;")
 
 public class Declaracion extends BaseEntity {
 
@@ -35,7 +36,7 @@ public class Declaracion extends BaseEntity {
     private Expediente expediente;
 
     @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)
-    @ListProperties("descripcion, cantidad, pesoUnitario, UnidadMedida.abreviatura, valor, Pais.nombrepais, CodigoArancelario.codigo ")
+    @ListProperties("descripcionItem, cantidad, pesoUnitario, valor, unidadMedida.abreviatura, pais.nombrepais, codigoArancelario.codigo")
     private Collection<ItemDeclaracion> items;
 
 }
