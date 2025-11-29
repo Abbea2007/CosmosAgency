@@ -13,28 +13,9 @@ import javax.persistence.*;
 @Table(name = "cliente")
 @Getter
 @Setter
-@Views({
-        @View(name = "Simple", members =
-                "nombreCliente;" +
-                        "ruc;" +
-                        "email;" +
-                        "telefono;" +
-        "direccion;"),
-        @View(name = "init", members =
-                "nombreCliente;" +
-                        "ruc;" +
-                        "email;" +
-                        "telefono;" +
-        "direccion;"),
+@View(name = "Simple",
+members = "id, nombreCliente, ruc")
 
-        @View(members =
-                "nombreCliente;" +
-                        "ruc;" +
-                        "email;" +
-                        "telefono;" +
-        "direccion;"),
-
-})
 public class Cliente extends BaseEntity {
 
     @Required

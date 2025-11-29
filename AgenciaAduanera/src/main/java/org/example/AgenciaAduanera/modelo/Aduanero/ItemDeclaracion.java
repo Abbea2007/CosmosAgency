@@ -26,9 +26,7 @@ import javax.persistence.ManyToOne;
         "valor;" +
         "pais;" +
         "codigoArancelario;" +
-        "unidadMedida;" +
-        "declaracion"
-)
+        "unidadMedida;")
 
 public class ItemDeclaracion extends BaseEntity {
 

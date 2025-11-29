@@ -36,6 +36,7 @@ public class Factura extends BaseEntity{
     private LocalDate fecha;
 
     @ManyToOne(fetch = javax.persistence.FetchType.LAZY, optional = false)
+    @ReferenceView("Simple")
     private Cliente cliente;
     @ElementCollection
     @ListProperties("servicio.numero, servicio.nombreServicio, servicio.precio")
