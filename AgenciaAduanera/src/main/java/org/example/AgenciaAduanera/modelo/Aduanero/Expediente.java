@@ -20,10 +20,17 @@ import java.util.Collection;
 @Table(name = "expediente")
 @Getter
 @Setter
-@View(members =
+@Views({
+        @View(name = "Simple", members =
+                "codigoExpediente, anio, fecha_apertura;" +
+                "cliente;"),
+
+
+        @View(members =
         "codigoExpediente, anio, fecha_apertura;" +
         "cliente;" +
         "estadoExpediente;")
+})
 
 public class Expediente extends BaseEntity {
 
@@ -39,6 +46,7 @@ public class Expediente extends BaseEntity {
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ReferenceView("Simple")
     private Cliente cliente;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

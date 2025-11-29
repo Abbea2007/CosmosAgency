@@ -40,6 +40,7 @@ public class Usuario extends BaseEntity {
 
     @Required
     private String username;
+    @Required
     private String password;
 
     @Required
