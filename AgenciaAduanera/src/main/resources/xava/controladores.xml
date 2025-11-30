@@ -31,5 +31,12 @@ https://github.com/openxava/openxava/blob/master/openxavatest/src/main/resources
                 clase="acciones.CrearProfesor"/>        
     </controlador>
     -->
+
+    <controlador nombre="SignIn">
+        <accion nombre="init" al-iniciar="true" oculta="true"
+                clase="com.openxava.naviox.actions.InitSignInAction"/>
+        <accion nombre="signIn"
+                clase="org.example.AgenciaAduanera.actions.SignInAction"/>
+    </controlador>
     
 </controladores>
