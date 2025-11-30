@@ -10,6 +10,7 @@ import org.openxava.calculators.CurrentYearCalculator;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Collection;
@@ -25,11 +26,13 @@ import java.util.Collection;
         "anio, numero, fecha; "+
         "cliente; "+
         "detalleFacturas; "+
-        "subTotal, iva, total; "+
+        "porcentajeIva; " +
+                "iva;  "+
+        "importeTotal; " +
         "obervaciones")
         })
 
-public class Factura extends BaseEntity{
+public class Factura extends BaseEntity {
 
 
     @DefaultValueCalculator(CurrentYearCalculator.class)
@@ -43,14 +46,22 @@ public class Factura extends BaseEntity{
     @ReferenceView("Simple")
     private Cliente cliente;
     @ElementCollection
-    @ListProperties("servicio.numero, servicio.nombreServicio, cantidad, servicio.precio, impuesto.porcentaje")
+    @ListProperties("servicio.numero, servicio.nombreServicio, servicio.precioServicio")
     private Collection<DetalleFactura> detalleFacturas;
+
+    @Digits(integer=12, fraction=0)
+    private BigDecimal porcentajeIva;
+
+    @ReadOnly
     @Money
-    private BigDecimal subTotal;
-    @Money
+    @Calculation("sum(detalleFacturas.servicio.precioServicio) * porcentajeIva / 100")
     private BigDecimal iva;
+
+    @ReadOnly
     @Money
-    private BigDecimal total;
+    @Calculation("sum(detalleFacturas.servicio.precioServicio) + iva")
+    private BigDecimal importeTotal;
+
     @TextArea
     private String obervaciones;
 

@@ -18,7 +18,7 @@ public class Servicio extends BaseEntity {
     private String numero;
     private String nombreServicio;
     @Money
-    private BigDecimal precio;
+    private BigDecimal precioServicio;
     @TextArea
     private String obervaciones;
 

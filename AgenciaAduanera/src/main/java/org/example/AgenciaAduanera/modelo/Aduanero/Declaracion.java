@@ -68,7 +68,7 @@ public class Declaracion extends BaseEntity {
     private MedioTransporte medioTransporte;
 
     @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)
-    @ListProperties("descripcionItem, cantidad, pesoUnitario, valor, unidadMedida.abreviatura, pais.nombrepais, codigoArancelario.codigo")
+    @ListProperties("descripcionItem, cantidad, valorUnitario, importe, flete, seguro, otrosGastos, baseImponible, unidadMedida.abreviatura, pais.nombrepais, codigoArancelario.codigo")
     private Collection<ItemDeclaracion> items;
 
     @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)

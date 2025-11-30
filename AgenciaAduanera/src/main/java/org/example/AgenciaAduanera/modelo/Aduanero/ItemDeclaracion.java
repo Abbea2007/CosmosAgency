@@ -7,14 +7,12 @@ import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.CodigoArancelario;
 import org.example.AgenciaAduanera.modelo.Catalogos.Pais;
 import org.example.AgenciaAduanera.modelo.Catalogos.UnidadMedida;
-import org.openxava.annotations.Hidden;
-import org.openxava.annotations.Money;
-import org.openxava.annotations.Required;
-import org.openxava.annotations.View;
+import org.openxava.annotations.*;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.math.BigDecimal;
 
 @Entity
 @Getter
@@ -22,8 +20,12 @@ import javax.persistence.ManyToOne;
 @View(members =
         "descripcionItem;" +
         "cantidad;" +
-        "pesoUnitario;" +
-        "valor;" +
+        "valorUnitario;" +
+        "importe;" +
+        "flete;" +
+        "seguro;" +
+        "otrosGastos;" +
+        "baseImponible;" +
         "pais;" +
         "codigoArancelario;" +
         "unidadMedida;")
@@ -34,10 +36,20 @@ public class ItemDeclaracion extends BaseEntity {
     @Required
     private Integer cantidad;
     @Required
-    private Double pesoUnitario;
-    @Required
     @Money
-    private Double valor;
+    private Double valorUnitario;
+    @Calculation("cantidad * valorUnitario")
+    @Money
+    private Double importe;
+    @Money
+    private Double flete;
+    @Money
+    private Double seguro;
+    @Money
+    private Double otrosGastos;
+    @Calculation("importe + flete + seguro + otrosGastos")
+    @Money
+    private BigDecimal baseImponible;
 
     @ManyToOne(fetch = javax.persistence.FetchType.LAZY, optional = false)
     private Pais pais;
@@ -54,5 +66,8 @@ public class ItemDeclaracion extends BaseEntity {
     private Declaracion declaracion;
 
 
+    }
 
-}
+
+
+
