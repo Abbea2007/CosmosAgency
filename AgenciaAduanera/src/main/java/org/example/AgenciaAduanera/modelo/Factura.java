@@ -17,13 +17,17 @@ import java.util.Collection;
 @Entity
 @Getter
 @Setter
-@View(members =
-        "anio, numero, fecha; " +
-                "cliente; " +
-                "detalleFacturas; " +
-                "subTotal, iva, total; " +
-                "obervaciones"
-)
+@Views({
+
+        @View(name = "Simple", members =
+                "id, anio, numero, fecha; "),
+        @View(members =
+        "anio, numero, fecha; "+
+        "cliente; "+
+        "detalleFacturas; "+
+        "subTotal, iva, total; "+
+        "obervaciones")
+        })
 
 public class Factura extends BaseEntity{
 
@@ -39,7 +43,7 @@ public class Factura extends BaseEntity{
     @ReferenceView("Simple")
     private Cliente cliente;
     @ElementCollection
-    @ListProperties("servicio.numero, servicio.nombreServicio, servicio.precio")
+    @ListProperties("servicio.numero, servicio.nombreServicio, cantidad, servicio.precio, impuesto.porcentaje")
     private Collection<DetalleFactura> detalleFacturas;
     @Money
     private BigDecimal subTotal;

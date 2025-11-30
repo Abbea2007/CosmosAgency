@@ -17,4 +17,7 @@ public class DetalleFactura {
     @ManyToOne(fetch = javax.persistence.FetchType.LAZY)
     private Servicio servicio;
 
+    @ManyToOne(fetch = javax.persistence.FetchType.LAZY)
+    private Impuesto impuesto;
+
 }

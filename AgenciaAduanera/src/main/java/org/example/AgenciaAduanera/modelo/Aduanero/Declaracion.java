@@ -72,7 +72,7 @@ public class Declaracion extends BaseEntity {
     private Collection<ItemDeclaracion> items;
 
     @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)
-    @ListProperties("numeroDocumento, fecha, archivo, url, descripcion")
+    @ListProperties("numeroDocumento, fecha, url, descripcion")
     private Collection<DocumentoSoporte> documentoSoportes;
 
     @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)
