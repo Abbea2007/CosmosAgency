@@ -4,7 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.*;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.Filters;
+import org.hibernate.annotations.ParamDef;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 
@@ -17,7 +22,7 @@ import java.util.Collection;
 @Getter
 @Setter
 @View(members =
-        "numeroDeclaracion, fechaDeclaracion, tipoDeclaracion, estadoDeclaracion;" +
+        "numeroDeclaracion, fechaDeclaracion, anio, tipoDeclaracion, estadoDeclaracion;" +
         "expediente;" +
         "tranportista;" +
         "consignatario;" +
@@ -30,10 +35,13 @@ import java.util.Collection;
 public class Declaracion extends BaseEntity {
 
 
-    @DefaultValueCalculator(value = CalcularNumero.class, properties = @PropertyValue(name = "anio"))
+    @Required
     private String numeroDeclaracion;
     @DefaultValueCalculator(CurrentYearCalculator.class)
     private LocalDate fechaDeclaracion;
+    @Required
+    @DefaultValueCalculator(CurrentYearCalculator.class)
+    private int anio;
     @Required
     private String tipoDeclaracion;
 

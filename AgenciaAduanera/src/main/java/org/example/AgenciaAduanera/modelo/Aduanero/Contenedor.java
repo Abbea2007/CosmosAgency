@@ -3,6 +3,7 @@ package org.example.AgenciaAduanera.modelo.Aduanero;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.openxava.annotations.DescriptionsList;
 import org.openxava.annotations.View;
 

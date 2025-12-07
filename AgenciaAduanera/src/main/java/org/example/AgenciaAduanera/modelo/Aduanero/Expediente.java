@@ -5,10 +5,11 @@ import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.EstadoExpediente;
 import org.example.AgenciaAduanera.modelo.Cliente;
-import org.example.AgenciaAduanera.modelo.Estado;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
+import org.example.AgenciaAduanera.modelo.calculators.CalcularNumeroExpediente;
+import org.hibernate.annotations.Filter;
 import org.openxava.annotations.*;
-import org.openxava.calculators.CurrentDateCalculator;
 import org.openxava.calculators.CurrentYearCalculator;
 
 import javax.persistence.*;
@@ -18,24 +19,28 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "expediente")
+@Filter(name="sucursalFilter", condition="sucursal_id = :sucursalId")
+
 @Getter
 @Setter
 @Views({
         @View(name = "Simple", members =
-                "codigoExpediente, anio, fecha_apertura;" +
+                "codigoExpediente, anio, fecha_apertura, fecha_cierre;" +
                 "cliente;"),
 
 
         @View(members =
-        "codigoExpediente, anio, fecha_apertura;" +
+        "codigoExpediente, anio, fecha_apertura, fecha_cierre;" +
         "cliente;" +
         "estadoExpediente;")
 })
 
 public class Expediente extends BaseEntity {
 
+
+
     @Required
-    @DefaultValueCalculator(value = CalcularNumero.class, properties = @PropertyValue(name = "anio"))
+    @DefaultValueCalculator(value = CalcularNumeroExpediente.class, properties = @PropertyValue(name = "anio"))
     private int codigoExpediente;
     @Required
     @DefaultValueCalculator(CurrentYearCalculator.class)
@@ -43,6 +48,8 @@ public class Expediente extends BaseEntity {
     @Required
     @DefaultValueCalculator(CurrentYearCalculator.class)
     private LocalDate fecha_apertura;
+
+    private LocalDate fecha_cierre;
 
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

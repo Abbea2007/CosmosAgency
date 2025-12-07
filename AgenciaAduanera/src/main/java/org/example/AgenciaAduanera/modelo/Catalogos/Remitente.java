@@ -3,6 +3,7 @@ package org.example.AgenciaAduanera.modelo.Catalogos;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;

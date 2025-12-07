@@ -7,6 +7,7 @@ import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.CodigoArancelario;
 import org.example.AgenciaAduanera.modelo.Catalogos.Pais;
 import org.example.AgenciaAduanera.modelo.Catalogos.UnidadMedida;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.openxava.annotations.*;
 
 import javax.persistence.Entity;

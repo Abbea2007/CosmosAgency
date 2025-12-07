@@ -18,7 +18,21 @@
 		<modelo nombre="Profesor"/>
 		<controlador nombre="Print"/>
 	</modulo>		
-	-->	  
-		
+	-->
+
+    <modulo nombre="Expediente">
+        <modelo nombre="Expediente"/>
+        <controlador nombre="ExpedienteCustom"/>
+        <controlador nombre ="Typical"/>
+    </modulo>
+
+    <modulo nombre="Declaracion">
+        <modelo nombre="Declaracion"/>
+        <controlador nombre="DeclaracionCustom"/>
+        <controlador nombre="Typical"/>
+    </modulo>
+
+
+
 </aplicacion>
 

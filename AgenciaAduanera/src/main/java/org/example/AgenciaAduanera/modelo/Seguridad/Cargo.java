@@ -3,6 +3,7 @@ package org.example.AgenciaAduanera.modelo.Seguridad;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

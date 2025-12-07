@@ -4,6 +4,10 @@ package org.example.AgenciaAduanera.modelo;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.Filters;
+import org.hibernate.annotations.ParamDef;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 

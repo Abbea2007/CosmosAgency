@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Estado;
 import org.example.AgenciaAduanera.modelo.Sucursal;
+//import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.example.AgenciaAduanera.modelo.util.Encriptar;
 import org.openxava.annotations.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,6 +35,7 @@ public class Usuario extends BaseEntity {
     @JoinColumn(name = "sucursal_id")
     @DescriptionsList(descriptionProperties = "nombre")
     private Sucursal sucursal;
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cargo_id")
