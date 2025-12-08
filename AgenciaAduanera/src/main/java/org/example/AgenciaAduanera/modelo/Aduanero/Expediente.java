@@ -6,6 +6,8 @@ import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.EstadoExpediente;
 import org.example.AgenciaAduanera.modelo.Cliente;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
+import org.example.AgenciaAduanera.modelo.FilterRestrictiva;
+import org.example.AgenciaAduanera.modelo.Sucursal;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumeroExpediente;
 import org.hibernate.annotations.Filter;
@@ -17,10 +19,10 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 
+
+@FilterRestrictiva
 @Entity
 @Table(name = "expediente")
-@Filter(name="sucursalFilter", condition="sucursal_id = :sucursalId")
-
 @Getter
 @Setter
 @Views({
@@ -32,7 +34,8 @@ import java.util.Collection;
         @View(members =
         "codigoExpediente, anio, fecha_apertura, fecha_cierre;" +
         "cliente;" +
-        "estadoExpediente;")
+        "estadoExpediente;" +
+        "sucursal;")
 })
 
 public class Expediente extends BaseEntity {
@@ -60,8 +63,14 @@ public class Expediente extends BaseEntity {
     @JoinColumn(name = "estado_expediente_id")
     private EstadoExpediente estadoExpediente;
 
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "sucursal_id")
+    @DescriptionsList(descriptionProperties = "nombre")
+    private Sucursal sucursal;
+
     @OneToMany(mappedBy = "expediente", fetch = FetchType.LAZY)
     private Collection<Declaracion> declaraciones;
+
 
 
 }

@@ -1,4 +1,4 @@
-package org.example.AgenciaAduanera.modelo.Seguridad;
+package org.example.AgenciaAduanera.modelo.seguridad;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,6 +8,7 @@ import org.openxava.annotations.View;
 import org.openxava.annotations.Views;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "rol")
@@ -22,4 +23,6 @@ public class Rol extends BaseEntity {
 
     @Required
     private String nombre;
+
+
 }

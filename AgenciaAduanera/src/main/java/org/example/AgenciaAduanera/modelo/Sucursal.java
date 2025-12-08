@@ -38,8 +38,6 @@ public class Sucursal extends BaseEntity {
     @Required
     private String nombre;
 
-    private Boolean central = Boolean.FALSE;
-
 
     @Required
     private String telefono;

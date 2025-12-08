@@ -1,4 +1,4 @@
-package org.example.AgenciaAduanera.modelo.Seguridad;
+package org.example.AgenciaAduanera.modelo.seguridad;
 
 import lombok.Getter;
 import lombok.Setter;

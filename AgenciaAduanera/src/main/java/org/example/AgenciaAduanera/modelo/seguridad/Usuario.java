@@ -1,15 +1,12 @@
-package org.example.AgenciaAduanera.modelo.Seguridad;
+package org.example.AgenciaAduanera.modelo.seguridad;
 
 import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
-import org.example.AgenciaAduanera.modelo.Estado;
 import org.example.AgenciaAduanera.modelo.Sucursal;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.example.AgenciaAduanera.modelo.util.Encriptar;
 import org.openxava.annotations.*;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 
@@ -38,9 +35,9 @@ public class Usuario extends BaseEntity {
 
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cargo_id")
-    @DescriptionsList(descriptionProperties = "nombreCargo")
-    private Cargo cargo;
+    @JoinColumn(name = "rol_id")
+    @DescriptionsList(descriptionProperties = "nombre")
+    private Rol rol;
 
     public String getUsuario()  {
         return username;

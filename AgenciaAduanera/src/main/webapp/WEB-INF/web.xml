@@ -16,4 +16,9 @@
         <location>/WEB-INF/error500.html</location>
     </error-page>
 
+    <context-param>
+        <param-name>modulesHelperProviderClassName</param-name>
+        <param-value>org.example.AgenciaAduanera.security.CustomModuleHelperProvider</param-value>
+    </context-param>
+
 </web-app>

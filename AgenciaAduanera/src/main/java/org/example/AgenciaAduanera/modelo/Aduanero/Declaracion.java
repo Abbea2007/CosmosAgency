@@ -5,6 +5,8 @@ import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.*;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
+import org.example.AgenciaAduanera.modelo.FilterRestrictiva;
+import org.example.AgenciaAduanera.modelo.Sucursal;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
 import org.hibernate.annotations.Filter;
 import org.hibernate.annotations.FilterDef;
@@ -18,6 +20,7 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 
+@FilterRestrictiva
 @Entity
 @Getter
 @Setter
@@ -28,6 +31,7 @@ import java.util.Collection;
         "consignatario;" +
         "remitente;" +
         "medioTransporte;" +
+                "sucursal;" +
 "items;" +
 "documentoSoportes;" +
 "contenedores;")
@@ -74,6 +78,11 @@ public class Declaracion extends BaseEntity {
     @JoinColumn(name = "medio_transporte_id")
     @DescriptionsList(descriptionProperties="nombre")
     private MedioTransporte medioTransporte;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "sucursal_id")
+    @DescriptionsList(descriptionProperties = "nombre")
+    private Sucursal sucursal;
 
     @OneToMany(mappedBy = "declaracion", fetch = FetchType.LAZY)
     @ListProperties("descripcionItem, cantidad, valorUnitario, importe, flete, seguro, otrosGastos, baseImponible, unidadMedida.abreviatura, pais.nombrepais, codigoArancelario.codigo")
