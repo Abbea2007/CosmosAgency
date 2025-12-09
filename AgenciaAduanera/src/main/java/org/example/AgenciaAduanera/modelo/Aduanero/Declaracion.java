@@ -5,13 +5,8 @@ import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.*;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
-import org.example.AgenciaAduanera.modelo.FilterRestrictiva;
-import org.example.AgenciaAduanera.modelo.Sucursal;
-import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
-import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
-import org.hibernate.annotations.Filters;
-import org.hibernate.annotations.ParamDef;
+import org.example.AgenciaAduanera.annotations.FilterRestrictiva;
+import org.example.AgenciaAduanera.modelo.Catalogos.Sucursal;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 

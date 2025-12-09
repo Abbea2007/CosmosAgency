@@ -1,4 +1,4 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.annotations;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

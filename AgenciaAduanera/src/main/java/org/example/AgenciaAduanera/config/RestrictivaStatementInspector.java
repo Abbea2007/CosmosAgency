@@ -1,5 +1,6 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.config;
 
+import org.example.AgenciaAduanera.annotations.FilterRestrictiva;
 import org.hibernate.resource.jdbc.spi.StatementInspector;
 import org.hibernate.SessionFactory;
 
@@ -16,8 +17,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-// Importar la clase de Usuario si es necesaria para la compilación, aunque no se usa directamente en el código HQL
-// import org.example.AgenciaAduanera.modelo.Seguridad.Usuario;
 
 public class RestrictivaStatementInspector implements StatementInspector {
 
@@ -165,6 +164,7 @@ public class RestrictivaStatementInspector implements StatementInspector {
         Long id = sucursalActual.get();
         if (id != null) return id;
 
+        // Evitar recursión: si ya estamos resolviendo, no hacer nada
         if (resolviendoSucursal.get()) return null;
 
         resolviendoSucursal.set(true);
@@ -173,6 +173,12 @@ public class RestrictivaStatementInspector implements StatementInspector {
             String login = Users.getCurrent();
             if (Is.emptyString(login)) return null;
 
+            // ? SI EL USUARIO ES ADMIN ? NO FILTRAR POR SUCURSAL
+            if (login.equalsIgnoreCase("admin")) {
+                return null; // Esto hace que en inspect() no se añada el WHERE
+            }
+
+            // ? LÓGICA ORIGINAL QUE YA FUNCIONABA
             Query q = XPersistence.getManager()
                     .createQuery("select u.sucursal.id from Usuario u where u.username = :user");
             q.setParameter("user", login);

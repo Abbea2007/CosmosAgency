@@ -4,13 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.EstadoExpediente;
-import org.example.AgenciaAduanera.modelo.Cliente;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
-import org.example.AgenciaAduanera.modelo.FilterRestrictiva;
-import org.example.AgenciaAduanera.modelo.Sucursal;
-import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
+import org.example.AgenciaAduanera.annotations.FilterRestrictiva;
+import org.example.AgenciaAduanera.modelo.Catalogos.Sucursal;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumeroExpediente;
-import org.hibernate.annotations.Filter;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 

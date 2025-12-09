@@ -1,19 +1,16 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.transacciones;
 
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.Aduanero.Cliente;
+import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.calculators.CalcularNumero;
-import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
-import org.hibernate.annotations.Filters;
-import org.hibernate.annotations.ParamDef;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Digits;
 import java.math.BigDecimal;
@@ -21,7 +18,6 @@ import java.time.LocalDate;
 import java.util.Collection;
 
 
-@FilterRestrictiva
 @Entity
 @Getter
 @Setter
@@ -69,10 +65,7 @@ public class Factura extends BaseEntity {
     @Calculation("sum(detalleFacturas.servicio.precioServicio) + iva")
     private BigDecimal importeTotal;
 
-    @ManyToOne(fetch = javax.persistence.FetchType.LAZY, optional = false)
-    @JoinColumn(name = "sucursal_id")
-    @DescriptionsList(descriptionProperties = "nombre")
-    private Sucursal sucursal;
+
 
     @TextArea
     private String obervaciones;

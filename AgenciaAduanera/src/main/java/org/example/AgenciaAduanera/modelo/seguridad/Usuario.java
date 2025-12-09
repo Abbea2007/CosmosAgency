@@ -3,7 +3,7 @@ package org.example.AgenciaAduanera.modelo.seguridad;
 import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
-import org.example.AgenciaAduanera.modelo.Sucursal;
+import org.example.AgenciaAduanera.modelo.Catalogos.Sucursal;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.example.AgenciaAduanera.modelo.util.Encriptar;
 import org.openxava.annotations.*;

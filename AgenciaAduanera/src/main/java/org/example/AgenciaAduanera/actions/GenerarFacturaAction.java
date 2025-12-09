@@ -1,9 +1,9 @@
 package org.example.AgenciaAduanera.actions;
 
 import org.example.AgenciaAduanera.modelo.Aduanero.Declaracion;
-import org.example.AgenciaAduanera.modelo.DetalleFactura;
-import org.example.AgenciaAduanera.modelo.Factura;
-import org.example.AgenciaAduanera.modelo.Servicio;
+import org.example.AgenciaAduanera.modelo.transacciones.DetalleFactura;
+import org.example.AgenciaAduanera.modelo.transacciones.Factura;
+import org.example.AgenciaAduanera.modelo.transacciones.Servicio;
 import org.openxava.actions.ViewBaseAction;
 import org.openxava.jpa.XPersistence;
 

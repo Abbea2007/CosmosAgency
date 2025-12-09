@@ -1,11 +1,11 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.Aduanero;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.Direccion;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.View;
-import org.openxava.annotations.Views;
 
 import javax.persistence.*;
 

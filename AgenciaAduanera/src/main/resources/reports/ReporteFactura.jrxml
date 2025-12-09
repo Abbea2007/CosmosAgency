@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "-//JasperReports//DTD Report Design//EN"
+        "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+
+<jasperReport name="ReporteFactura" orientation="Landscape" pageWidth="842" pageHeight="595"
+              columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+
+    <style name="TableHeader" mode="Opaque" backcolor="#f4f4f4">
+        <box leftPadding="6" rightPadding="6" topPadding="4" bottomPadding="4">
+            <pen lineWidth="0.5" lineColor="#9e9e9e"/>
+        </box>
+    </style>
+
+    <style name="TableCell">
+        <box leftPadding="8" rightPadding="8" topPadding="6" bottomPadding="6">
+            <pen lineWidth="0.5" lineColor="#c5c5c5"/>
+        </box>
+    </style>
+
+    <!-- CAMPOS DE FACTURA -->
+    <field name="anio" class="java.lang.Integer"/>
+    <field name="numero" class="java.lang.Integer"/>
+    <field name="fecha" class="java.time.LocalDate"/>
+    <field name="importeTotal" class="java.math.BigDecimal"/>
+
+    <title>
+        <band height="90">
+
+            <image scaleImage="RetainShape">
+                <reportElement x="0" y="0" width="70" height="70"/>
+                <imageExpression><![CDATA["reports/agencia_aduanera_aconic_2023.png"]]></imageExpression>
+            </image>
+
+            <staticText>
+                <reportElement x="80" y="8" width="480" height="30"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="20" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Reporte de Facturas]]></text>
+            </staticText>
+
+            <textField>
+                <reportElement x="562" y="8" width="240" height="18"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Fecha de generación: " +
+                    new java.text.SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date())
+                ]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="40">
+
+            <staticText>
+                <reportElement style="TableHeader" x="0" y="0" width="200" height="40"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Año]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement style="TableHeader" x="200" y="0" width="200" height="40"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Número]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement style="TableHeader" x="400" y="0" width="200" height="40"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Fecha]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement style="TableHeader" x="600" y="0" width="200" height="40"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Total]]></text>
+            </staticText>
+
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="32">
+
+            <textField>
+                <reportElement style="TableCell" x="0" y="0" width="200" height="32"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement style="TableCell" x="200" y="0" width="200" height="32"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement style="TableCell" x="400" y="0" width="200" height="32"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+            </textField>
+
+            <textField pattern="$ #,##0.00">
+                <reportElement style="TableCell" x="600" y="0" width="200" height="32"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{importeTotal}]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </detail>
+
+</jasperReport>

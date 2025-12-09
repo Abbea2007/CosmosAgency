@@ -1,15 +1,12 @@
-package org.example.AgenciaAduanera.modelo;
+package org.example.AgenciaAduanera.modelo.transacciones;
 
 
 import lombok.Getter;
 import lombok.Setter;
 
-import org.openxava.annotations.*;
-
 import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
-import java.math.BigDecimal;
 
 @Embeddable
 @Getter

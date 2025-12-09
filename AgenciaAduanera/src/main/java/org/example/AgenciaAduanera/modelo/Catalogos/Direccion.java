@@ -14,7 +14,5 @@ public class Direccion {
 
     private String calle;
     private String codigoPostal;
-    private String departamento;
-    private String municipio;
 
 }

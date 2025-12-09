@@ -55,7 +55,12 @@ https://github.com/openxava/openxava/blob/master/openxavatest/src/main/resources
 
 
 
-
-
-    
+    <controlador nombre="TypicalConReporte">
+    <hereda-de controlador="Typical"/>
+        <accion nombre="printFacturas"
+                icono="printer"
+                modo="list"
+                clase="org.example.AgenciaAduanera.actions.PrintFacturaReportAction"
+        />
+    </controlador>
 </controladores>

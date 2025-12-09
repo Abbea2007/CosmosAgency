@@ -22,7 +22,7 @@
     	<class>com.openxava.naviox.model.User</class>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="update"/>
-            <property name="hibernate.session_factory.statement_inspector" value="org.example.AgenciaAduanera.modelo.RestrictivaStatementInspector"/>
+            <property name="hibernate.session_factory.statement_inspector" value="org.example.AgenciaAduanera.config.RestrictivaStatementInspector"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>

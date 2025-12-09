@@ -20,6 +20,8 @@
 	</modulo>		
 	-->
 
+
+
     <modulo nombre="Expediente">
         <modelo nombre="Expediente"/>
         <controlador nombre="ExpedienteCustom"/>
@@ -32,6 +34,10 @@
         <controlador nombre="Typical"/>
     </modulo>
 
+    <modulo nombre="Facturas">
+        <modelo nombre="Factura"/>
+        <controlador nombre="TypicalConReporte"/>
+    </modulo>
 
 
 </aplicacion>

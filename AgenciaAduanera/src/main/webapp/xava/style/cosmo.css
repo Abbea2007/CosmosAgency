@@ -1,0 +1,93 @@
+@import 'base.css';
+
+:root {
+
+    /* === Colores base === */
+    --color-azul: #27295f;
+    --color-verde: #74A945;
+    --color-gris: #B8B7B7;
+    --color-blanco: #ffffff;
+
+
+    /* === Menú de módulos de la izquierda === */
+    --modules-list-color: var(--color-blanco);
+    --modules-list-background: var(--color-azul);
+    --modules-list-selected-color: var(--color-verde);
+    --modules-list-hover-background: rgba(255,255,255,0.05);
+
+
+    /* === Cabecera del módulo === */
+    --module-header-color: var(--color-blanco);
+    --module-header-background: var(--color-azul);
+
+
+    /* === Botonera === */
+    --button-bar-button-color: var(--color-azul);
+    --button-bar-background: var(--color-blanco);
+    --list-formats-color: var(--color-gris);
+    --list-formats-hover-color: white;
+
+
+    /* === Fondos y etiquetas === */
+    --background: var(--color-blanco);
+    --color: var(--color-azul);
+
+
+    /* === Marcos === */
+    --frame-background: var(--color-blanco);
+
+
+    /* === Acciones === */
+    --action-color: var(--color-verde);
+    --action-hover-color: var(--color-azul);
+    --action-hover-background: rgba(39,41,95,0.1);
+    --default-action-button-background: var(--color-azul);
+
+
+    /* === Editores === */
+    --required-editor-border: var(--color-verde);
+
+
+
+    .home-container {
+        width: 100%;
+        max-width: 600px;
+        margin: 80px auto 0;
+        text-align: center;
+    }
+
+    .home-logo {
+        width: 260px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .home-title {
+        font-size: 40px;
+        font-weight: bold;
+        color: var(--color-azul);
+        margin-bottom: 10px;
+    }
+
+    .home-subtitle {
+        font-size: 18px;
+        color: var(--color-azul);
+        margin-bottom: 25px;
+    }
+
+    .home-button {
+        background: var(--color-verde);
+        color: white !important;
+        padding: 12px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.2s;
+    }
+
+    .home-button:hover {
+        background: #5f8a37;
+        transform: scale(1.05);
+    }
+
+}

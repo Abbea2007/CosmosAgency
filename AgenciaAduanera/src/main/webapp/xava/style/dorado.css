@@ -1,0 +1,12 @@
+@import 'light.css';
+
+:root {
+
+    --mi-oro: #cda434;
+    --my-highlight: var(--mi-oro);
+
+    /* Menú de módulos de la izquierda */
+    --modules-list-color: var(--my-lightgray);
+    --modules-list-background: var(--mi-oro);
+
+}
