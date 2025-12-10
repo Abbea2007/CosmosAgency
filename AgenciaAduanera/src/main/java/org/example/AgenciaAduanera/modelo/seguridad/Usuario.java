@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 
-public class Usuario extends BaseEntity {
+public class  Usuario extends BaseEntity {
 
     @Required
     private String username;

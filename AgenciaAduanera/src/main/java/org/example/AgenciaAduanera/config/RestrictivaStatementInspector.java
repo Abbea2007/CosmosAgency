@@ -21,7 +21,6 @@ import java.util.stream.Collectors;
 public class RestrictivaStatementInspector implements StatementInspector {
 
     private volatile Set<String> tablasFiltrables;
-
     private static final Pattern FROM_JOIN_PATTERN =
             Pattern.compile("(from|join)\\s+([a-zA-Z0-9_]+)\\s+([a-zA-Z0-9_]+)", Pattern.CASE_INSENSITIVE);
 
