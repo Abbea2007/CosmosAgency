@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.Sucursal;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
+import org.example.AgenciaAduanera.modelo.calculators.EstadoUsuarioDefaultCalculator;
 import org.example.AgenciaAduanera.modelo.enums.EstadoUsuario;
 import org.example.AgenciaAduanera.modelo.util.Encriptar;
 import org.openxava.annotations.*;
@@ -40,6 +41,8 @@ public class  Usuario extends BaseEntity {
     @DescriptionsList(descriptionProperties = "nombre")
     private Rol rol;
 
+
+    @DefaultValueCalculator(EstadoUsuarioDefaultCalculator.class)
     @Enumerated(EnumType.STRING)
     private EstadoUsuario estadoUsuario;
 
