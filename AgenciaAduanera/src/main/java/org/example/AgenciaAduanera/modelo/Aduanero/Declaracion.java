@@ -7,6 +7,7 @@ import org.example.AgenciaAduanera.modelo.Catalogos.*;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
 import org.example.AgenciaAduanera.annotations.FilterRestrictiva;
 import org.example.AgenciaAduanera.modelo.Catalogos.Sucursal;
+import org.example.AgenciaAduanera.modelo.calculators.NumeroDeclaracionCalculator;
 import org.openxava.annotations.*;
 import org.openxava.calculators.CurrentYearCalculator;
 
@@ -33,7 +34,7 @@ import java.util.Collection;
 
 public class Declaracion extends BaseEntity {
 
-
+    @DefaultValueCalculator(NumeroDeclaracionCalculator.class)
     @Required
     private String numeroDeclaracion;
     @DefaultValueCalculator(CurrentYearCalculator.class)
