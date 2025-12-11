@@ -4,7 +4,14 @@
 
 <web-app>
 
-    <display-name>OpenXava Application</display-name>
+    <display-name>Agencia Aduanera</display-name>
+
+    <!-- NaviOX: necesario para restringir módulos -->
+
+    <filter-mapping>
+        <filter-name>naviox</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
     <error-page>
         <error-code>404</error-code>
@@ -15,10 +22,5 @@
         <error-code>500</error-code>
         <location>/WEB-INF/error500.html</location>
     </error-page>
-
-    <context-param>
-        <param-name>modulesHelperProviderClassName</param-name>
-        <param-value>org.example.AgenciaAduanera.security.CustomModuleHelperProvider</param-value>
-    </context-param>
 
 </web-app>

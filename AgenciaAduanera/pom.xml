@@ -16,12 +16,14 @@
 	</properties>
 
 	<dependencies>
+
 		<dependency>
 			<groupId>org.openxava</groupId>
 			<artifactId>openxava</artifactId>
 			<version>${openxava.version}</version>
 		</dependency>
-		
+
+
 		<!-- 
 		Para acceder a tu base de datos descomenta la entrada correspondiente 
 		de las dependencias de abajo. Si no encuentras la tuya, busca en
@@ -107,6 +109,7 @@
             <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
+
 
 
     </dependencies>

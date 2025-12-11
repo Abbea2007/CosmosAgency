@@ -62,5 +62,31 @@ https://github.com/openxava/openxava/blob/master/openxavatest/src/main/resources
                 modo="list"
                 clase="org.example.AgenciaAduanera.actions.PrintFacturaReportAction"
         />
+
+    </controlador>
+
+    <controlador nombre="Reference">
+        <hereda-de controlador="Reference"/>
+
+        <accion nombre="search"
+                clase="org.openxava.actions.ReferenceSearchAction"
+                icono="magnify"
+                imagen="search.gif"/>
+
+        <accion nombre="createNew"
+                clase="org.example.AgenciaAduanera.actions.NewCreateFromReference"
+                icono="plus-box-multiple"
+                imagen="create_new.gif"/>
+
+        <accion nombre="modify"
+                clase="org.example.AgenciaAduanera.actions.NewEditFromReference"
+                icono="border-color"
+                imagen="edit.gif"/>
+
+        <!-- ? Esta era la acción que faltaba -->
+        <accion nombre="clear"
+                clase="org.openxava.actions.ClearReferenceAction"
+                icono="eraser"
+                imagen="clear.gif"/>
     </controlador>
 </controladores>
