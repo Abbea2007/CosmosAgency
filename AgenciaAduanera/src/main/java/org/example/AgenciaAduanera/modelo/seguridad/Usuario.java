@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.Sucursal;
 //import org.example.AgenciaAduanera.modelo.SucursalEntity;
+import org.example.AgenciaAduanera.modelo.enums.EstadoUsuario;
 import org.example.AgenciaAduanera.modelo.util.Encriptar;
 import org.openxava.annotations.*;
 
@@ -38,6 +39,9 @@ public class  Usuario extends BaseEntity {
     @JoinColumn(name = "rol_id")
     @DescriptionsList(descriptionProperties = "nombre")
     private Rol rol;
+
+    @Enumerated(EnumType.STRING)
+    private EstadoUsuario estadoUsuario;
 
     public String getUsuario()  {
         return username;

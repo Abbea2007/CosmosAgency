@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.AgenciaAduanera.modelo.BaseEntity;
 import org.example.AgenciaAduanera.modelo.Catalogos.Direccion;
+import org.example.AgenciaAduanera.modelo.calculators.EstadoClienteDefaultCalculator;
+import org.example.AgenciaAduanera.modelo.enums.EstadoCliente;
+import org.openxava.annotations.DefaultValueCalculator;
 import org.openxava.annotations.Required;
 import org.openxava.annotations.View;
 
@@ -33,6 +36,12 @@ public class Cliente extends BaseEntity {
 
     @Embedded
     private Direccion direccion;
+
+    @DefaultValueCalculator(EstadoClienteDefaultCalculator.class)
+    @Enumerated(EnumType.STRING)
+    private EstadoCliente estadoCliente;
+
+
 
 
 
